@@ -21,3 +21,4 @@ function App() {
 }
 
 export default App;
+/*tela principal onde concentra todos os componentes*/

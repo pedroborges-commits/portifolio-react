@@ -2,7 +2,7 @@ import { Send } from "lucide-react";
 import { Phone } from "lucide-react";
 import { Mail } from "lucide-react";
 import { MapPin } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, type ChangeEvent, type FormEvent } from "react";
 function Contato() {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
@@ -22,7 +22,7 @@ function Contato() {
       return () => clearTimeout(timer);
     }
   }, [enviado]);
-  function handleSubmit(e) {
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const novosErros = {
       nome: "",
@@ -110,7 +110,9 @@ function Contato() {
                   type="text"
                   placeholder="Seu nome"
                   value={nome}
-                  onChange={(e) => setNome(e.target.value)}
+                  onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                    setNome(e.target.value)
+                  }
                   className="flex-1 h-10 w-full rounded-lg border border-[#E2E5E9] bg-[#FBFAF9] px-2"
                 />
                 {erros.nome && (
@@ -122,7 +124,9 @@ function Contato() {
                   type="email"
                   placeholder="Seu email"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                    setEmail(e.target.value)
+                  }
                   className="flex-1 h-10 w-full rounded-lg border border-[#E2E5E9] bg-[#FBFAF9] px-2"
                 />
                 {erros.email && (
@@ -135,7 +139,9 @@ function Contato() {
                 <textarea
                   placeholder="Sua mensagem"
                   value={mensagem}
-                  onChange={(e) => setMensagem(e.target.value)}
+                  onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
+                    setMensagem(e.target.value)
+                  }
                   className="h-32 w-full rounded-lg border border-[#E2E5E9] bg-[#FBFAF9] px-2 flex-1 resize-none"
                 />
                 {erros.mensagem && (

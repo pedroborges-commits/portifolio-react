@@ -21,4 +21,4 @@ function App() {
 }
 
 export default App;
-/*tela principal onde concentra todos os componentes*/
+/*tela principal onde concentra todos os componentes e é interligado no index.tsx*/

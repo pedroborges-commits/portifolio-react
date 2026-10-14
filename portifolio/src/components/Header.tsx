@@ -58,15 +58,6 @@ function Header() {
           >
             Contato
           </a>
-          <a
-            href="https://www.google.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button className="h-8 px-8 rounded-lg bg-[#303D50] text-white text-sm flex items-center gap-3 cursor-pointer">
-              <Download size={14} /> Baixar CV
-            </button>
-          </a>
         </nav>
 
         {/*responsividade */}
